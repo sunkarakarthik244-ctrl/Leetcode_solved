@@ -8,12 +8,14 @@ class Solution {
             int n=nums[i];
             while(n>0){
                 int digit=n%10;
-                if(digit<min){
-                    min=digit;
-                }
-                if(digit>max){
-                    max=digit;
-                }
+                // if(digit<min){
+                //     min=digit;
+                // }
+                // if(digit>max){
+                //     max=digit;
+                // }
+                max=Math.max(max,digit);
+                min=Math.min(min,digit);
                 n=n/10;
 
             }
@@ -25,8 +27,7 @@ class Solution {
                 ans=0;
                 ans+=nums[i];
                 prediff=diff;
-            }
-            
+            }    
         }
         return ans;
     }
