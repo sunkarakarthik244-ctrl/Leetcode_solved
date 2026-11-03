@@ -5,7 +5,7 @@ class Solution {
         int i=num1.length()-1;
         int j=num2.length()-1;
         int carry=0;
-        while(i>=0 || j>=0 || carry>0){
+        while(i>=0 || j>=0){
             int sum=carry;
             if(i>=0){
                 sum+=num1.charAt(i)-'0';
@@ -18,7 +18,7 @@ class Solution {
             ls.addFirst(sum%10);
             carry=sum/10;
         }
-        //if(carry>0) ls.add(carry);
+        if(carry>0) ls.addFirst(carry);
         for(int k=0;k<ls.size();k++){
             sb.append(ls.get(k));
         }
